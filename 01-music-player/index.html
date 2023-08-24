@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Glass Music Player
+    </title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="music-player">
+        <div class="cover">
+          <img src="./cover.jpg" alt="cover" class="cover-image" id="music-image" />
+        </div>
+        <div>
+          <h2 class="title">Song Name</h2>
+          <p class="artist">Artist Name</p>
+        </div>
+        <div class="controls">
+          <button class="play-button" onClick="togglePlay()">
+            <span class="play-icon"></span>
+          </button>
+          <button class="skip-button" onClick="nextSong()">Skip</button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    let isPlaying = false
+    function togglePlay() {
+      const playButton = document.querySelector('.play-button');
+      const playIcon = document.querySelector('.play-icon')
+      const image = document.getElementById('music-image')
+      isPlaying= !isPlaying
+      if(isPlaying) {
+        playButton.classList.add('playing');
+        playIcon.style.width='15px';
+        playIcon.style.borderLeftColor='#4285f4';
+        image.classList.add('spin');
+      } else {
+        playButton.classList.remove('playing');
+        playIcon.style.borderLeftColor='#333';
+        image.classList.remove('spin');
+        playIcon.style.width='0';
+      }
+    }
+  </script>
+</html>

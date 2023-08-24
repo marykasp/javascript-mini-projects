@@ -1,0 +1,106 @@
+body {
+  background-color: #000000;
+  background-image: radial-gradient(at 47% 33%, hsl(272, 100%, 51%)0%, transparent 59%),
+  radial-gradient(at 82% 55%, hsl(310, 100%, 61%)0%, transparent 55%),
+  radial-gradient(at 22% 55%, hsl(191, 100%, 49%)0%, transparent 55%);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.music-player {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.674);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.cover img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+.spin {
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+0% {
+  transform: rotate(0);
+}
+100% {
+  transform: rotate(360deg);
+}
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #333;
+}
+
+.artist {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls {
+  display: flex;
+}
+
+.play-button,
+.skip-button {
+  padding: 10px 30px;
+  margin: 0 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3;
+}
+
+.play-button,
+.skip-button:hover {
+  transform: scale(1.1);
+}
+
+.play-icon {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #333;
+  transition: transform 0.3s;
+}
+
+.play-button.playing .play-icon {
+  transform: translateX(-2px);
+}
+
+.skip-button {
+  color: #333;
+}
+
+.skip-button:hover {
+  color: #4285f4; 
+}
