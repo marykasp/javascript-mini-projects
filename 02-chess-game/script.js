@@ -37,8 +37,52 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Function to handle start of a drag position
-  const onDragStart = (source, piece) => {
+  const onDragStart = (source, piece, position) => {
+    console.log('Drag started');
+    console.log(`Source: ${source}`);
+    console.log(`Piece: ${piece}`);
+    console.log(`Position ${game.objToFen(position)}`);
+
     // allow user to drag their pieces if game is not over and the piece is at the start
     return !game.game_over() && piece.search(userColor) === 0;
+  };
+
+  // Function to handle a piece drop on the board
+  const onDrop = (source, target) => {
+    console.log(`Source ${source}`);
+    console.log(`Target: ${target}`);
+
+    const move = game.move({
+      from: source,
+      to: target,
+      promotion: 'q',
+    });
+
+    console.log(`Move: ${move}`);
+    if (move === null) return 'snapback';
+
+    // have computer make random move
+    window.setTimeout(makeRandomMove, 250);
+    // record move of user
+    recordMove(move.san, moveCount);
+    moveCount++;
+  };
+
+  // Function to handle the end of a piece snap animation
+  const onSnapEnd = () => {
+    board.position(game.fen());
+  };
+
+  // config options for the chessboard
+  const boardConfig = {
+    showNotation: true,
+    draggable: true,
+    position: 'start',
+    onDragStart,
+    onDrop,
+    onSnapEnd,
+    moveSpeed: 'fast',
+    snapBackSpeed: 500,
+    snapSpeed: 100,
   };
 });
