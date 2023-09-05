@@ -33,10 +33,9 @@ h1 {
 }
 
 .buttons {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 40px;
 }
 
 button {

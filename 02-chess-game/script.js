@@ -1,7 +1,7 @@
 // Wait for the DOM to fully load before execute code
 document.addEventListener('DOMContentLoaded', () => {
   let board = null; // Initialize the chessboard
-  const game = new Chess(); // Create new Chess game
+  const game = new Chess(); // create new chess game instance
   const moveHistory = document.getElementById('move-history'); // Get move history container
 
   let moveCount = 1; // Inialize the move count
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('Checkmate!');
     } else {
       const randomIdx = Math.floor(Math.random() * possibleMoves.length);
-      const move = possibleMoves(randomIdx);
+      const move = possibleMoves[randomIdx];
 
       game.move(move); // executes the move passed in on the board
       // game.fen() returns current position as FEN string
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Drag started');
     console.log(`Source: ${source}`);
     console.log(`Piece: ${piece}`);
-    console.log(`Position ${game.objToFen(position)}`);
+    console.log(`Position ${Chessboard.objToFen(position)}`);
 
     // allow user to drag their pieces if game is not over and the piece is at the start
     return !game.game_over() && piece.search(userColor) === 0;
@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to handle a piece drop on the board
   const onDrop = (source, target) => {
+    console.log('Drop Piece');
     console.log(`Source ${source}`);
     console.log(`Target: ${target}`);
 
@@ -58,7 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
       promotion: 'q',
     });
 
-    console.log(`Move: ${move}`);
+    //Move: {"color":"w","from":"e2","to":"e4","flags":"b","san": "e4"}
+    console.log(`Move: ${JSON.stringify(move)}`);
     if (move === null) return 'snapback';
 
     // have computer make random move
@@ -85,4 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     snapBackSpeed: 500,
     snapSpeed: 100,
   };
+
+  // Initialize the chessboard
+  board = Chessboard('board', boardConfig);
 });
