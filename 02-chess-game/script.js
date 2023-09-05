@@ -104,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelector('.set-pos').addEventListener('click', () => {
     const fen = prompt('Enter the FEN notation for the desired position');
-
+    console.log(`FEN position: ${fen}`);
+    //  rnbqkb1r/ppp1pppp/5n2/3p4/3P4/8/PPP2PPP/RNBQKBNR w KQkq - 0 4
     if (fen !== null) {
       if (game.load(fen)) {
         // position object initializes the board to the position specified in fen string
@@ -116,5 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       alert('Invalid FEN position');
     }
+  });
+
+  // flip board
+  document.querySelector('.flip-board').addEventListener('click', () => {
+    board.flip();
+    makeRandomMove();
+    // toggle user's color after flip
+    userColor = userColor === 'w' ? 'b' : 'w';
   });
 });
