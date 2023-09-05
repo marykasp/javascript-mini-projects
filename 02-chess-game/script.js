@@ -22,17 +22,23 @@ document.addEventListener('DOMContentLoaded', () => {
       // game.fen() returns current position as FEN string
       board.position(game.fen()); // returns the current position as a Position object
 
-      recordMove(move, moveCount); // record and display the move with move count
+      recordMove(move, moveCount);
       moveCount++; // increment move count
     }
+  };
 
-    // Function to record and display a move in the move history
-    const recordMove = (move, count) => {
-      const formattedMove =
-        count % 2 === 1 ? `${Math.ceil(count / 2)}. ${move}` : `${move} - `;
+  // Function to record and display a move in the move history
+  const recordMove = (move, count) => {
+    const formattedMove =
+      count % 2 === 1 ? `${Math.ceil(count / 2)}. ${move}` : `${move} - `;
 
-      moveHistory.textContent += formattedMove + ' ';
-      moveHistory.scrollTop = moveHistory.scrollHeight; // auto scrolll to latest move
-    };
+    moveHistory.textContent += formattedMove + ' ';
+    moveHistory.scrollTop = moveHistory.scrollHeight; // auto scrolll to latest move
+  };
+
+  // Function to handle start of a drag position
+  const onDragStart = (source, piece) => {
+    // allow user to drag their pieces if game is not over and the piece is at the start
+    return !game.game_over() && piece.search(userColor) === 0;
   };
 });
