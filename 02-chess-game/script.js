@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       const randomIdx = Math.floor(Math.random() * possibleMoves.length);
       const move = possibleMoves[randomIdx];
+      console.log(`Computer move: ${move}`);
 
       game.move(move); // executes the move passed in on the board
       // game.fen() returns current position as FEN string
@@ -83,11 +84,37 @@ document.addEventListener('DOMContentLoaded', () => {
     onDragStart,
     onDrop,
     onSnapEnd,
-    moveSpeed: 'fast',
+    moveSpeed: 'slow',
     snapBackSpeed: 500,
     snapSpeed: 100,
   };
 
   // Initialize the chessboard
   board = Chessboard('board', boardConfig);
+
+  // Event listeners for buttons
+  document.querySelector('.play-again').addEventListener('click', () => {
+    game.reset();
+    board.start();
+
+    moveHistory.textContent = '';
+    moveCount = 1; // reset count and user piece color
+    userColor = 'w';
+  });
+
+  document.querySelector('.set-pos').addEventListener('click', () => {
+    const fen = prompt('Enter the FEN notation for the desired position');
+
+    if (fen !== null) {
+      if (game.load(fen)) {
+        // position object initializes the board to the position specified in fen string
+        board.position(fen);
+        moveHistory.textContent = '';
+        moveCount = 1;
+        userColor = 'w';
+      }
+    } else {
+      alert('Invalid FEN position');
+    }
+  });
 });
