@@ -1,1 +1,151 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #152754;
+}
+
+.container {
+  width: 450px;
+  padding: 25px;
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.06);
+}
+
+.container .gradient-box {
+  height: 220px;
+  width: 100%;
+  border-radius: 7px;
+  background: linear-gradient(to left top, #009fff, #ec2f48);
+}
+
+.container .row {
+  display: flex;
+  margin: 20px 0;
+  justify-content: space-between;
+}
+
+.options p {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.row :where(.column, button) {
+  width: calc(100% / 2 - 12px);
+}
+
+.options .select-box {
+  border-radius: 5px;
+  padding: 10px 15px;
+  border: 1px solid #aaa;
+}
+
+.select-box select {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.12rem;
+  background: none;
+}
+
+.options .palette {
+  margin-left: 60px;
+}
+
+.palette input[type='color'] {
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+  width: calc(100% / 2 - 12px);
+  height: 45px;
+}
+
+.palette input[type='color']::-webkit-color-swatch {
+  border-radius: 20px;
+  border: none;
+}
+
+.palette input:last-child {
+  margin-left: 6px;
+}
+
+.container textarea {
+  background-color: #f0f2fc;
+  width: 100%;
+  color: #30304a;
+  font-size: 1rem;
+  resize: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.buttons button {
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin: 0 0 -15px;
+  font-size: 1.09rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buttons .refresh {
+  background: #f2c94c;
+}
+
+.buttons .refresh:hover {
+  background: #06beb6;
+}
+
+.buttons .copy {
+  background: #4a6ee0;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 432px) {
+  .container {
+    padding: 25px;
+  }
+
+  .row :where(.column, button) {
+    width: calc(100% / 2 - 8px);
+  }
+
+  .options .select-box {
+    padding: 8px 15px;
+  }
+
+  .options .palette {
+    margin-left: 40px;
+  }
+
+  .options .colors {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .palette input {
+    width: calc(100% / 2-5px);
+  }
+
+  .palette input:last-child {
+    margin-left: 0;
+  }
+}

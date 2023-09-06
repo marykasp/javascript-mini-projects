@@ -2,98 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="style.css"
-    />
-    <title>Color Gradients</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>Color Gradient Generator</title>
   </head>
   <body>
     <div class="container">
-      <div class="colors">
-        <input
-          type="color"
-          id="color-one"
-          value="#7896cb"
-        />
-
-        <input
-          type="color"
-          id="color-two"
-          value="#7896cb"
-        />
+      <div class="gradient-box"></div>
+      <div class="row options">
+        <div class="column direction">
+          <p>Direction</p>
+          <div class="select-box">
+            <select name="" id="">
+              <option value="to top">Top</option>
+              <option value="to right top">Right Top</option>
+              <option value="to left top">Left Top</option>
+              <option value="to right">Right</option>
+              <option value="to left">Left</option>
+              <option value="to bottom">Bottom</option>
+              <option value="to right bottom">Right Bottom</option>
+              <option value="to left bottom">Left Bottom</option>
+            </select>
+          </div>
+        </div>
+        <div class="column palette">
+          <p>Colors</p>
+          <div class="colors">
+            <input type="color" value="#ec2f4b" />
+            <input type="color" value="#009fff" />
+          </div>
+        </div>
       </div>
-      <div class="buttons">
-        <button onclick="setDirection('to top', this)">
-          <i class="fas fa-arrow-up"></i>
-        </button>
-        <button
-          onclick="setDirection('to bottom', this)"
-          class="active"
-        >
-          <i class="fas fa-arrow-down"></i>
-        </button>
-        <button onclick="setDirection('to right', this)">
-          <i class="fas fa-arrow-right"></i>
-        </button>
-        <button
-          onclick="setDirection('to left', this)"
-          class="rotate-icon"
-        >
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <button
-          class="rotate-icon"
-          onclick="setDirection('to top right', this)"
-        >
-          <i class="fas fa-arrow-up"></i>
-        </button>
-        <button
-          onclick="setDirection('to bottom right', this)"
-          class="rotate-icon"
-        >
-          <i class="fas fa-arrow-down"></i>
-        </button>
-        <button
-          class="rotate-icon"
-          onclick="setDirection('to top left', this)"
-        >
-          <i class="fas fa-arrow-up"></i>
-        </button>
-        <button
-          onclick="setDirection('to bottom left', this)"
-          class="rotate-icon"
-        >
-          <i class="fas fa-arrow-down"></i>
-        </button>
-      </div>
-      <button
-        type="submit"
-        onClick="generateCode()"
-      >
-        Generate
-      </button>
-      <div class="output">
-        <textarea
-          name="code"
-          id="code"
-          rows="2"
-        ></textarea>
-        <button
-          class="copy"
-          id="copy"
-          onclick="copyText()"
-        >
-          Copy
-        </button>
+      <textarea class="row output" disabled>
+background-image: linear-gradient(to left top, #ec2fb, #009fff
+      </textarea>
+      <div class="row buttons">
+        <button class="refresh">Refresh</button>
+        <button class="copy">Copy</button>
       </div>
     </div>
     <script src="index.js"></script>
