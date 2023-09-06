@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--gray-900);
+  background-color: var(--gray-50);
+}
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.payment-section {
+  padding: 45px 0;
+  background-color: antiquewhite;
+}
+
+.payment-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* Left content */
+.payment-header {
+  padding: 24px;
+  background-color: var(--indigo-500);
+  border-radius: 12px;
+  padding-bottom: 72px;
+}
+
+.payment-header-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--indigo-600);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 24px;
+}

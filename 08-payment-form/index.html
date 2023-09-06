@@ -7,17 +7,18 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="tailwind-colors.css" />
     <link rel="stylesheet" href="style.css" />
     <title>Payment Plan</title>
   </head>
   <body>
-    <section class="payment-plan">
+    <section class="payment-section">
       <div class="container">
         <div class="payment-wrapper">
           <div class="payment-left">
             <div class="payment-header">
               <div class="payment-header-icon">
-                <i class="ri-admin-line"></i>
+                <i class="ri-flashlight-fill"></i>
               </div>
               <div class="payment-header-title">Order Summary</div>
               <div class="payment-header-desc">
@@ -56,16 +57,27 @@
             <h1>Payment Details</h1>
             <form action="" class="payment-form">
               <div class="payment-method">
-                <input type="radio" name="payment-method" id="method-1" />
-                <label for="method-1" class="payment-method"> Method 1 </label>
-                <input type="radio" name="payment-method" id="method-2" />
+                <input
+                  type="radio"
+                  name="payment-method"
+                  id="method-1"
+                  checked
+                />
                 <label for="method-1" class="payment-method">
-                  Mastercard
+                  <img src="images/visa.png" alt="" />
+                </label>
+                <input type="radio" name="payment-method" id="method-2" />
+                <label for="method-2" class="payment-method">
+                  <img src="images/mastercard.png" alt="" />
                 </label>
                 <input type="radio" name="payment-method" id="method-3" />
-                <label for="method-1" class="payment-method"> Paypal </label>
+                <label for="method-3" class="payment-method">
+                  <img src="images/paypal.png" alt="" />
+                </label>
                 <input type="radio" name="payment-method" id="method-4" />
-                <label for="method-1" class="payment-method"> Stripe </label>
+                <label for="method-4" class="payment-method">
+                  <img src="images/stripe.png" alt="" />
+                </label>
               </div>
               <div class="payment-form-group">
                 <input
