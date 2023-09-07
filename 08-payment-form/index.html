@@ -58,8 +58,32 @@
           </div>
           <!-- Right Payment Form -->
           <div class="payment-right">
+            <!-- <h1 class="payment-title">Payment Details</h1> -->
+            <!-- Credit Card -->
+            <div class="card-container">
+              <div class="front">
+                <div class="image">
+                  <img src="images/chip.png" alt="credit card chip" />
+                  <img src="images/visa.png" alt="credit card" class="visa" />
+                </div>
+                <div class="card-number-box">################</div>
+                <div class="flexbox">
+                  <div class="box">
+                    <span>card holder</span>
+                    <div class="card-holder-name">full name</div>
+                  </div>
+                  <div class="box">
+                    <span>expires</span>
+                    <div class="expiration">
+                      <span class="exp-month">mm</span>
+                      <span class="exp-year">yy</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <form action="" class="payment-form">
-              <h1 class="payment-title">Payment Details</h1>
               <div class="payment-method">
                 <input
                   type="radio"
@@ -101,6 +125,7 @@
                   type="text"
                   placeholder=" "
                   class="payment-form-control"
+                  maxlength="16"
                   id="card-number"
                 />
                 <label
@@ -109,6 +134,20 @@
                   >Card Number</label
                 >
               </div>
+              <div class="payment-form-group">
+                <input
+                  type="text"
+                  placeholder=" "
+                  class="payment-form-control"
+                  id="card-holder-name"
+                />
+                <label
+                  for="card-holder-name"
+                  class="payment-form-label payment-form-label-required"
+                  >Card Holder</label
+                >
+              </div>
+
               <div class="payment-form-group-flex">
                 <div class="payment-form-group">
                   <input

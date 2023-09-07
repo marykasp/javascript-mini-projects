@@ -20,6 +20,10 @@ body {
 
 .payment-section {
   padding: 45px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 .payment-wrapper {
@@ -203,13 +207,17 @@ body {
 /* Payment Form */
 .payment-right {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .payment-form {
-  padding: 24px;
-  background-color: var(--white);
+  background: var(--white);
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+  padding: 24px;
 }
 
 .payment-title {
@@ -345,4 +353,66 @@ input:checked + .payment-method-item::before {
 }
 .payment-form-group-flex > :not(:last-child) {
   margin-right: 12px;
+}
+
+/* Credit Card */
+
+.payment-right .card-container {
+  margin-bottom: -20px;
+  position: relative;
+  height: 250px;
+  width: 350px;
+}
+
+.card-container .front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(45deg, var(--indigo-600), var(--pink-600));
+  border-radius: 5px;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.front .image {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.front .image img {
+  height: 50px;
+}
+
+.front .image img.visa {
+  height: 30px;
+}
+
+.front .card-number-box {
+  padding: 30px 0;
+  color: var(--white);
+  font-size: 22px;
+}
+
+.front .flexbox {
+  display: flex;
+}
+
+.front .flexbox .box:nth-child(1) {
+  margin-right: auto;
+}
+
+.flexbox .box {
+  font-size: 15px;
+  color: var(--white);
+}
+
+.box .card-holder-name,
+.exp-month,
+.exp-year {
+  text-transform: uppercase;
 }
