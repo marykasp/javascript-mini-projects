@@ -70,11 +70,11 @@
                 <div class="card-number-box">################</div>
                 <div class="flexbox">
                   <div class="box">
-                    <span>card holder</span>
+                    <span class="card-info">card holder</span>
                     <div class="card-holder-name">full name</div>
                   </div>
                   <div class="box">
-                    <span>expires</span>
+                    <span class="card-info">expires</span>
                     <div class="expiration">
                       <span class="exp-month">mm</span>
                       <span class="exp-year">yy</span>
@@ -149,10 +149,10 @@
                   type="text"
                   placeholder=" "
                   class="payment-form-control"
-                  id="card-holder-name"
+                  id="card-holder-input"
                 />
                 <label
-                  for="card-holder-name"
+                  for="card-holder-input"
                   class="payment-form-label payment-form-label-required"
                   >Card Holder</label
                 >
@@ -164,10 +164,10 @@
                     type="date"
                     placeholder=" "
                     class="payment-form-control"
-                    id="expiry-date"
+                    id="expiry-date-input"
                   />
                   <label
-                    for="expiry-date"
+                    for="expiry-date-input"
                     class="payment-form-label payment-form-label-required"
                     >Expiry Date</label
                   >
@@ -177,7 +177,7 @@
                     type="text"
                     placeholder=" "
                     class="payment-form-control"
-                    id="cvv"
+                    id="cvv-input"
                   />
                   <label
                     for="cvv"
@@ -194,5 +194,7 @@
         </div>
       </div>
     </section>
+
+    <script src="index.js"></script>
   </body>
 </html>
