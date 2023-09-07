@@ -375,6 +375,8 @@ input:checked + .payment-method-item::before {
   backface-visibility: hidden;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.4s ease-out;
 }
 
 .front .image {
@@ -402,6 +404,10 @@ input:checked + .payment-method-item::before {
   display: flex;
 }
 
+.front .box {
+  text-transform: uppercase;
+}
+
 .front .flexbox .box:nth-child(1) {
   margin-right: auto;
 }
@@ -411,8 +417,50 @@ input:checked + .payment-method-item::before {
   color: var(--white);
 }
 
-.box .card-holder-name,
-.exp-month,
-.exp-year {
-  text-transform: uppercase;
+/* Back of card */
+.card-container .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(45deg, var(--indigo-600), var(--pink-600));
+  border-radius: 5px;
+  padding: 20px 0;
+  text-align: right;
+  backface-visibility: hidden;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  transform: perspective(1000px) rotateY(180deg);
+  transition: transform 0.4s ease-out;
+}
+
+.back .stripe {
+  width: 100%;
+  background-color: #000;
+  height: 50px;
+  margin: 10px 0;
+}
+
+.back .box {
+  padding: 0 20px;
+}
+
+.back .box span {
+  color: var(--white);
+  font-size: 15px;
+}
+
+.back .box .cvv-box {
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  background: var(--white);
+  color: #333;
+  border-radius: 5px;
+}
+
+.back .box img {
+  margin-top: 30px;
+  height: 30px;
 }
