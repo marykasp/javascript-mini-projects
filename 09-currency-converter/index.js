@@ -2,27 +2,29 @@ let api = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 const fromDropdown = document.querySelector('#from-currency-select');
 const toDropdown = document.querySelector('#to-currency-select');
 const result = document.querySelector('#result');
+const toCurrencyName = document.querySelector('.to-currency');
+const fromCurrencyName = document.querySelector('.from-currency');
 
 // add currency codes to select dropdowns
-currencies.forEach((currency) => {
+currency_list.forEach((currency) => {
   const option = document.createElement('option');
-  option.value = currency;
-  option.text = currency;
+  option.value = currency.code;
+  option.text = currency.code;
 
   fromDropdown.add(option);
 });
 
-currencies.forEach((currency) => {
+currency_list.forEach((currency) => {
   const option = document.createElement('option');
-  option.value = currency;
-  option.text = currency;
+  option.value = currency.code;
+  option.text = currency.code;
 
   toDropdown.add(option);
 });
 
-// setting default values
-fromDropdown.value = 'USD';
-toDropdown.value = 'INR';
+const findCurrencyName = (currency) => {
+  return currency_list.find((c) => c.code === currency).name;
+};
 
 let convertCurrency = () => {
   // create References
@@ -36,11 +38,11 @@ let convertCurrency = () => {
     fetch(api)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         let fromExchangeRate = data.conversion_rates[fromCurrency];
         let toExhangeRate = data.conversion_rates[toCurrency];
 
         const convertedAmount = (amount / fromExchangeRate) * toExhangeRate;
-        console.log(convertedAmount);
         result.innerHTML = `${amount} ${fromCurrency} = ${convertedAmount.toFixed(
           2,
         )} ${toCurrency}`;
@@ -50,7 +52,25 @@ let convertCurrency = () => {
   }
 };
 
+fromDropdown.addEventListener('input', () => {
+  // console.log(findCurrencyName(fromDropdown.value));
+  fromCurrencyName.textContent = `${findCurrencyName(fromDropdown.value)}`;
+});
+
+toDropdown.addEventListener('input', () => {
+  // console.log(findCurrencyName(toDropdown.value));
+  toCurrencyName.textContent = `${findCurrencyName(toDropdown.value)}`;
+});
+
 const button = document.querySelector('#convert-btn');
 button.addEventListener('click', convertCurrency);
 
-window.addEventListener('load', convertCurrency);
+window.addEventListener('load', () => {
+  // setting default values
+  fromDropdown.value = 'USD';
+  fromCurrencyName.textContent = `${findCurrencyName('USD')}`;
+
+  toDropdown.value = 'INR';
+  toCurrencyName.textContent = `${findCurrencyName('INR')}`;
+  convertCurrency();
+});

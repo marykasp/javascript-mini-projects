@@ -111,3 +111,14 @@ button {
   background-color: #e5dbff;
   padding: 0.8em 0;
 }
+
+.currency-names {
+  background-color: #02002c;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-top: 1em;
+  font-size: 10px;
+}
