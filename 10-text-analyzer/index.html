@@ -7,6 +7,25 @@
     <title>Text Analyzer</title>
   </head>
   <body>
+    <div class="wrapper">
+      <div id="input-container">
+        <h1>Text Analyzer</h1>
+        <textarea
+          name=""
+          id="textInput"
+          rows="3"
+          placeholder="Paste or type your text here"
+        ></textarea>
+        <button id="analyzeButton">Analyze</button>
+      </div>
+      <div id="results-container">
+        <div class="output-container">
+          <p>Word Count: <span id="wordCount">0</span></p>
+          <p>Character Count: <span id="charCount">0</span></p>
+          <p>Average Word Length: <span id="avgWordLength">0</span></p>
+        </div>
+      </div>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

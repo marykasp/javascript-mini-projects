@@ -1,5 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #3d7ff9;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  width: 31.25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#input-container {
+  background-color: #010f2a;
+  border-radius: 0.5em;
+  padding: 4em 2em;
+  width: 100%;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1em;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 1em;
+  border-radius: -0.5em;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#analyzeButton {
+  color: #fff;
+  width: 100%;
+  background-color: #3d7ff9;
+  border-radius: 0.5em;
+  padding: 1.5em 0;
+  margin-top: 1em;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+#analyzeButton:hover {
+  background-color: #246df6;
+}
+
+#results-container {
+  width: 120%;
+  background-color: white;
+  position: relative;
+  margin-top: -8em;
+  z-index: -1;
+  padding: 10em 2em 3em 2em;
+  border-radius: 0.5em;
+}
+
+.output-container {
+  font-weight: 500;
+  background-color: rgba(122, 119, 119, 0.1);
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.output-container span {
+  font-weight: 400;
 }
