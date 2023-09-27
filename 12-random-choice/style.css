@@ -51,10 +51,19 @@ body {
   border-radius: 0.5em;
   margin: 1.5em auto 2em auto;
   cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.card button:hover {
+  background-color: #31a877;
 }
 
 p#result {
   text-align: center;
   color: #fff;
   font-size: 1em;
+}
+
+#result span {
+  color: #3dcf91;
 }
