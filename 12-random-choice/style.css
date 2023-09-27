@@ -15,6 +15,23 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  position: relative;
+}
+
+.image-wrapper {
+  background-color: #26805a;
+  border-radius: 50%;
+  top: 20%;
+  left: 90%;
+  position: absolute;
+}
+
+img {
+  width: 700px;
+  height: 700px;
+}
+
 .card {
   background-color: #11141d;
   padding: 4em;
