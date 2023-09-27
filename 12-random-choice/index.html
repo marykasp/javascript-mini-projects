@@ -10,12 +10,16 @@
     <div class="container">
       <div class="card">
         <h1>Random Choice Picker</h1>
-        <form action="#">
-          <label for="choices">Enter your choices, separated by commas:</label>
-          <textarea name="choices" id="choices" cols="30" rows="10"></textarea>
-          <button>Pick a Random Choice</button>
-        </form>
-        <p>Please enter choices.</p>
+        <p>Enter your choices, separated by commas:</p>
+
+        <textarea
+          name="choices"
+          id="choices"
+          rows="3"
+          placeholder="Choice 1, Choice 2, Choice 3"
+        ></textarea>
+        <button id="pickButton">Pick a Random Choice</button>
+        <p id="result">Please enter choices.</p>
       </div>
     </div>
     <script src="index.js"></script>
