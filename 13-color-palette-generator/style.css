@@ -22,9 +22,9 @@ body {
 }
 
 .form-container {
-  width: 250px;
+  width: 350px;
   margin-bottom: 20px;
-  background-color: rgb(220, 217, 217, 0.18);
+  background-color: white;
   padding: 20px;
   border-radius: 5px;
   font-size: 14px;
@@ -33,23 +33,36 @@ body {
   gap: 20px;
 }
 
+.form-container label {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.form-container input {
+  padding: 5px;
+  cursor: pointer;
+}
+
 #generate-btn {
   border: none;
   outline: none;
   background-color: #1292ee;
   color: white;
-  padding: 12px 20px;
-  font-size: 1.2em;
-  border-radius: 0.175em;
+  padding: 10px 12px;
+  font-size: 17px;
+  border-radius: 5px;
   cursor: pointer;
   box-shadow: -1px 13px 25px -5px rgba(0, 0, 0, 0.13);
+  transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  transition-duration: 0.1s;
+}
+
+#generate-btn:hover {
+  transform: scale(1);
 }
 
 .container {
   width: 250px;
-}
-
-.color-container {
   display: flex;
   flex-direction: column;
   width: 250px;
@@ -65,13 +78,13 @@ body {
   line-height: 1;
 }
 
-.item[data-color] {
+.item[data-id] {
   transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
   transition-duration: 0.1s;
   cursor: pointer;
 }
 
-.item[data-color]:hover {
+.item[data-id]:hover {
   border-radius: 2px 2px 2px 2px;
   transform: scale(1.1);
   box-shadow: -1px 13px 25px -5px rgba(0, 0, 0, 0.13);
@@ -79,57 +92,19 @@ body {
   transition-duration: 0.1s;
 }
 
+.item[data-id="600"],
+.item[data-id="700"],
+.item[data-id="800"],
+.item[data-id="900"] {
+  color: white;
+}
+
+.item:last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+
 .header {
   background-color: #1292ee;
   border-radius: 5px 5px 0px 0px;
   color: white;
-}
-
-.second {
-  background-color: #f3fbff;
-  color: #002651;
-}
-
-.third {
-  background-color: #d6edff;
-  color: #002651;
-}
-
-.fourth {
-  background-color: #a0d4ff;
-  color: #002651;
-}
-
-.fifth {
-  background-color: #57b0fb;
-  color: #002651;
-  color: #f9fafa;
-}
-
-.sixth {
-  background-color: #1292ee;
-  color: #002651;
-  color: #f9fafa;
-}
-
-.seventh {
-  background-color: #0077cc;
-  color: #002651;
-  color: #f9fafa;
-}
-
-.eighth {
-  background-color: #005ca4;
-  color: #f9fafa;
-}
-
-.ninth {
-  background-color: #034077;
-  color: #f9fafa;
-}
-
-.item.tenth {
-  background-color: #002651;
-  color: #f9fafa;
-  border-radius: 0px 0px 5px 5px;
 }
