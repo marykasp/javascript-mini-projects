@@ -92,6 +92,25 @@ const changeBackground = (e) => {
   document.body.style.backgroundColor = color;
 };
 
+const copyCode = (e) => {
+  // console.log(e.target.innerHTML);
+  let input = document.createElement("input");
+  input.type = "text";
+  if (e.target.innerHTML.includes("#")) {
+    let text = e.target.innerHTML;
+    let hex = text;
+
+    input.value = hex;
+    // append to body
+    document.body.appendChild(input);
+    input.select();
+
+    document.execCommand("copy");
+    document.body.removeChild(input);
+    alert(`Color ${hex} copied`);
+  }
+};
+
 // use library to generate color name from hex code
 const generateColorName = (hex) => {
   var ntcMatch = ntc.name(hex);
@@ -135,6 +154,7 @@ const generatePalette = () => {
     colorBoxChildren.forEach((child) => {
       child.addEventListener("click", (e) => {
         e.stopPropagation();
+        copyCode(e);
       });
     });
 
