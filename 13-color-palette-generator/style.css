@@ -1,0 +1,135 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  font-family: "Arial";
+}
+
+body {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  width: 250px;
+  margin-bottom: 20px;
+  background-color: rgb(220, 217, 217, 0.18);
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#generate-btn {
+  border: none;
+  outline: none;
+  background-color: #1292ee;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.2em;
+  border-radius: 0.175em;
+  cursor: pointer;
+  box-shadow: -1px 13px 25px -5px rgba(0, 0, 0, 0.13);
+}
+
+.container {
+  width: 250px;
+}
+
+.color-container {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  box-shadow: -1px 13px 25px -5px rgba(0, 0, 0, 0.13);
+}
+
+.item {
+  width: 100%;
+  padding-inline: 20px;
+  padding-block: 12px;
+  display: flex;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.item[data-color] {
+  transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  transition-duration: 0.1s;
+  cursor: pointer;
+}
+
+.item[data-color]:hover {
+  border-radius: 2px 2px 2px 2px;
+  transform: scale(1.1);
+  box-shadow: -1px 13px 25px -5px rgba(0, 0, 0, 0.13);
+  transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+  transition-duration: 0.1s;
+}
+
+.header {
+  background-color: #1292ee;
+  border-radius: 5px 5px 0px 0px;
+  color: white;
+}
+
+.second {
+  background-color: #f3fbff;
+  color: #002651;
+}
+
+.third {
+  background-color: #d6edff;
+  color: #002651;
+}
+
+.fourth {
+  background-color: #a0d4ff;
+  color: #002651;
+}
+
+.fifth {
+  background-color: #57b0fb;
+  color: #002651;
+  color: #f9fafa;
+}
+
+.sixth {
+  background-color: #1292ee;
+  color: #002651;
+  color: #f9fafa;
+}
+
+.seventh {
+  background-color: #0077cc;
+  color: #002651;
+  color: #f9fafa;
+}
+
+.eighth {
+  background-color: #005ca4;
+  color: #f9fafa;
+}
+
+.ninth {
+  background-color: #034077;
+  color: #f9fafa;
+}
+
+.item.tenth {
+  background-color: #002651;
+  color: #f9fafa;
+  border-radius: 0px 0px 5px 5px;
+}
