@@ -48,3 +48,38 @@ button {
 .display-container {
   padding: 1;
 }
+
+.card-character-image {
+  background-color: #fff;
+  padding: 0.5em;
+  height: 9.3em;
+  width: 9.3em;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.card-character-image img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.character-name {
+  padding: 0.5em 0 0.8em 0;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.character-desc {
+  text-align: justify;
+  color: #a0a0a6;
+  line-height: 2em;
+  font-weight: 300;
+}
+
+.list {
+  position: absolute;
+}

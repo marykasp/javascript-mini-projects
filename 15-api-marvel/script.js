@@ -30,6 +30,7 @@ button.addEventListener(
         }"/>
         </div>
         <div class="character-name">${element.name}</div>
+        <div class="character-desc">${element.description}</div>
       </div>`;
     });
   }),
