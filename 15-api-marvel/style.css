@@ -49,6 +49,10 @@ button {
   padding: 1;
 }
 
+.card-container {
+  margin-top: 2em;
+}
+
 .card-character-image {
   background-color: #fff;
   padding: 0.5em;
@@ -82,4 +86,17 @@ button {
 
 .list {
   position: absolute;
+  width: 64%;
+  background-color: #555;
+  color: #fff;
+  z-index: 1;
+}
+
+.autocomplete-items {
+  padding: 0.5em;
+}
+
+.autocomplete-items:hover {
+  background-color: #ddd;
+  color: #171821;
 }
