@@ -1,0 +1,40 @@
+let button = document.querySelector("#submit-btn");
+let input = document.querySelector("#input-box");
+let showContainer = document.querySelector("#show-container");
+let listContainer = document.querySelector(".list");
+
+let date = new Date();
+console.log(date.getTime());
+
+const [timestamp, apiKey, hashValue] = [ts, publicKey, hashVal];
+
+button.addEventListener(
+  "click",
+  (getResult = async () => {
+    if (input.value.trim().length < 1) {
+      alert("Input cannot be blank");
+    }
+
+    showContainer.innerHTML = "";
+    const url = `https://gateway.marvel.com:443/v1/public/characters?ts=${timestamp}&apikey=${apiKey}&hash=${hashValue}&name=${input.value}`;
+
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    console.log(jsonData.data["results"]);
+
+    jsonData.data["results"].forEach((element) => {
+      showContainer.innerHTML = `<div class="card-container">
+        <div class="card-character-image">
+        <img src="${
+          element.thumbnail["path"] + "." + element.thumbnail["extension"]
+        }"/>
+        </div>
+        <div class="character-name">${element.name}</div>
+      </div>`;
+    });
+  }),
+);
+
+window.onload = () => {
+  getResult();
+};
