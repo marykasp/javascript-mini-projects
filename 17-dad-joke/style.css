@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
 }
 
 html {
@@ -11,7 +12,7 @@ html {
 }
 
 body {
-  background-color: #fab22a;
+  background-color: #e4b483;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,9 +25,48 @@ img {
   display: block;
 }
 
+.dadjoke-img {
+  width: 200px;
+  height: 200px;
+}
+
 .container {
-  background-color: #212121;
+  /* background-color: #212121; */
+  background-color: #151014;
   width: 80vmin;
   padding: 50px 40px;
-  border-radius: 10px;
+  border-radius: 5px;
+  display: grid;
+  place-items: center;
+  box-shadow: 20px 20px 40px rgba(97, 63, 0, 0.4);
+}
+
+p {
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 30px;
+  margin: 25px 0;
+}
+
+button {
+  display: block;
+  border: none;
+  outline: none;
+  background-color: #ca7f4f;
+  padding: 5px;
+  color: #171721;
+  font-weight: 600;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #e4b483;
 }
