@@ -49,6 +49,12 @@ p {
   word-wrap: break-word;
   line-height: 30px;
   margin: 25px 0;
+  opacity: 0;
+}
+
+.fade {
+  opacity: 1;
+  transition: opacity 1.5s ease;
 }
 
 button {
