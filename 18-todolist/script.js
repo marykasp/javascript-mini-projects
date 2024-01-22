@@ -2,7 +2,7 @@ const addBtn = document.querySelector("#add-btn");
 const newTaskInput = document.querySelector("#form-wrapper input");
 const tasksContainer = document.querySelector("#tasks");
 const error = document.querySelector("#error");
-const countValue = document.querySelector(".count");
+const countValue = document.querySelector(".count-value");
 
 let taskCount = 0;
 
@@ -31,11 +31,24 @@ const addTask = () => {
       <i class="fas fa-edit"></i>
     </button>
     <button class="delete">
-      <i class="fa-solid fa-trash"></i>
+      <i class="fas fa-trash"></i>
     </button>
   </div>`;
 
   tasksContainer.insertAdjacentHTML("beforeend", task);
+
+  // select all delete buttons
+  const deleteButtons = document.querySelectorAll(".delete");
+  deleteButtons.forEach((button) => {
+    // add event handler function that removes parent (div task)
+    button.onclick = () => {
+      button.parentNode.remove();
+      // update taskCount variable
+      taskCount -= 1;
+      console.log(taskCount);
+      displayCount(taskCount);
+    };
+  });
 };
 
 addBtn.addEventListener("click", addTask);
