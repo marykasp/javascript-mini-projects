@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="container">
+        <div class="form-wrapper">
+          <input
+            id="task-input"
+            type="text"
+            placeholder="Taskk to be done...."
+          />
+          <button id="add-btn">Add</button>
+        </div>
+        <div id="tasks">
+          <p class="pending-tasks">
+            <!-- number of pending tasks -->
+            You have <span class="count-value">0</span> task(s)
+          </p>
+        </div>
+      </section>
+      <p id="error">Input cannot be empty</p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
