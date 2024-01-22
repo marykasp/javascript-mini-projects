@@ -70,6 +70,25 @@ const addTask = () => {
   });
 
   // select all task checkboxes
+  const tasksCheck = document.querySelectorAll(".task-check");
+  // toggle completed class on span with task name
+  tasksCheck.forEach((check) => {
+    check.onChange = () => {
+      check.nextElementSibling.classList.toggle("completed");
+      // if checked then remove from not completed tasks
+      if (check.checked) {
+        taskCount -= 1;
+      } else {
+        taskCount += 1;
+      }
+
+      displayCount(taskCount);
+    };
+  });
+
+  // for every new task added
+  taskCount += 1;
+  displayCount(taskCount);
 };
 
 addBtn.addEventListener("click", addTask);
