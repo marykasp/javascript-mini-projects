@@ -49,6 +49,27 @@ const addTask = () => {
       displayCount(taskCount);
     };
   });
+
+  const editButtons = document.querySelectorAll(".edit");
+  editButtons.forEach((button) => {
+    button.onclick = (e) => {
+      let targetElement = e.target;
+      // get parent element of span which is button
+      if (!(targetElement.className == "edit")) {
+        targetElement = e.target.parentElement;
+      }
+
+      // console.log(targetElement);
+      // change the value of the input to be the task name
+      newTaskInput.value = targetElement.previousElementSibling?.innerText;
+      // remove task
+      targetElement.parentNode.remove();
+      taskCount -= 1;
+      displayCount(taskCount);
+    };
+  });
+
+  // select all task checkboxes
 };
 
 addBtn.addEventListener("click", addTask);
