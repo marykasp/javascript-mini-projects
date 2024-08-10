@@ -89,6 +89,9 @@ const addTask = () => {
   // for every new task added
   taskCount += 1;
   displayCount(taskCount);
+
+  // reset the input
+  newTaskInput.value = "";
 };
 
 addBtn.addEventListener("click", addTask);
