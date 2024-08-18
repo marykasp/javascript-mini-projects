@@ -52,3 +52,38 @@ body {
 .copy-icon:hover {
   color: #826afb;
 }
+
+.wrapper .range-box {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.range-box input {
+  width: 100%;
+  height: 100%;
+  accent-color: #826afb;
+}
+
+.range-box .slider-number {
+  min-width: 30px;
+  text-align: right;
+  font-size: 17px;
+  color: #707070;
+}
+
+.generate-button {
+  width: 100%;
+  padding: 12px 0;
+  margin-top: 20px;
+  background: #927dfc;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-button:hover {
+  background-color: #826afb;
+}
