@@ -6,3 +6,49 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #927dfc;
+}
+
+.wrapper {
+  background-color: #fff;
+  position: relative;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .password-box {
+  position: relative;
+  height: 50px;
+}
+
+.password-box input {
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  padding: 0 45px 0 15px;
+  border: 1px solid #aaa;
+  background-color: transparent;
+}
+
+.password-box .copy-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #707070;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.copy-icon:hover {
+  color: #826afb;
+}
