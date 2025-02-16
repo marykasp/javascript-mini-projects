@@ -1,13 +1,33 @@
 const wordText = document.querySelector(".word");
 const hintText = document.querySelector(".hint span");
+const timeText = document.querySelector(".time b");
 const refreshBtn = document.querySelector(".refresh-word");
 const checkBtn = document.querySelector(".check-word");
 const inputField = document.querySelector("input");
 const warning = document.querySelector(".warning");
 
-let correctWord;
+let correctWord, timer;
+
+const initTimer = (maxTime) => {
+  clearInterval(timer);
+  timer = setInterval(() => {
+    if (maxTime > 0) {
+      maxTime--;
+      return (timeText.innerText = maxTime);
+    }
+
+    alert(`Time up! ${correctWord.toUpperCase()} is the correct word.`);
+    endGame();
+  }, 1000);
+};
+
+const endGame = () => {
+  clearInterval(timer);
+};
 
 const initGame = () => {
+  // calling timer function with passing 30s as maxTime value
+  initTimer(30);
   //clear input field
   inputField.value = "";
 
