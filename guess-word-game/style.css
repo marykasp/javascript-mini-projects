@@ -47,6 +47,13 @@ body {
   text-transform: uppercase;
 }
 
+.typing-input {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+  pointer-events: none;
+}
+
 .inputs input:first-child {
   margin-left: 0px;
 }
