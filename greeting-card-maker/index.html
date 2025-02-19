@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Greeting Cards</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>💌 Custom Greeting Card</h1>
+      <label for="name">Enter Recipients Name:</label>
+      <input type="text" id="name" placeholder="Type a name..." />
+      <label for="theme">Select Theme of Card:</label>
+      <select id="theme">
+        <option value="birthday">🎂 Birthday</option>
+        <option value="congratulations">🎉 Congratulations</option>
+        <option value="love">❤️ Love</option>
+        <option value="friendship">🤩 Friends</option>
+      </select>
+      <button id="downloadCard">Download Card</button>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
