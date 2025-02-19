@@ -1,6 +1,11 @@
 const chatBody = document.querySelector(".chat-body");
-const messsageInput = document.querySelector(".message-input");
+const messageInput = document.querySelector(".message-input");
 const sendMessageBtn = document.querySelector("#send-message");
+
+// create a user message object to store values
+const userData = {
+  message: null,
+};
 
 // Create message element with dynamic classes (user or bot) and return it
 const createMessageElement = (content, classes) => {
@@ -11,8 +16,11 @@ const createMessageElement = (content, classes) => {
 };
 
 // Add user message to the outgoing list
-const handleOutgoingMessage = (userMessage) => {
-  const messageContent = `<div class="message-text">${userMessage}</div>`;
+const handleOutgoingMessage = (event) => {
+  event.preventDefault();
+  userData.message = messageInput.value.trim();
+
+  const messageContent = `<div class="message-text">${userData.message}</div>`;
   // create a new message element with user message content
   const outgoingMessageDiv = createMessageElement(
     messageContent,
@@ -24,16 +32,16 @@ const handleOutgoingMessage = (userMessage) => {
 };
 
 // handle Enter key press for sending message
-messsageInput.addEventListener("keydown", (e) => {
+messageInput.addEventListener("keydown", (e) => {
   const userMessage = e.target.value.trim();
   if (e.key === "Enter" && userMessage) {
     console.log(userMessage);
-    handleOutgoingMessage(userMessage);
+    handleOutgoingMessage(e);
   }
 });
 
 // get message input value when send message button clicked
-sendMessageBtn.addEventListener("click", () => {
-  const message = messsageInput.value;
-  console.log(message);
+sendMessageBtn.addEventListener("click", (event) => {
+  console.log(event);
+  handleOutgoingMessage(event);
 });
