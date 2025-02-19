@@ -186,6 +186,10 @@ body {
   outline: 1px solid #cccce5;
 }
 
+.chat-footer .chat-form:focus-within {
+  outline: 2px solid #5350c4;
+}
+
 .chat-form .message-input {
   border: none;
   outline: none;
@@ -215,6 +219,16 @@ body {
   color: #706db0;
   background: none;
   border-radius: 50%;
+  transition: 0.2s ease;
+}
+
+.chat-form .chat-controls button#send-message {
+  color: #fff;
+  background-color: #5350c4;
+}
+
+.chat-form .chat-controls button#send-message:hover {
+  background-color: #3d39ac;
 }
 
 .chat-form .chat-controls button:hover {

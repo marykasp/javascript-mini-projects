@@ -91,11 +91,19 @@
         <form action="#" class="chat-form">
           <textarea placeholder="Message...." class="message-input"></textarea>
           <div class="chat-controls">
-            <button class="material-symbols-rounded">
+            <button type="button" class="material-symbols-rounded">
               sentiment_satisfied
             </button>
-            <button class="material-symbols-rounded">attach_file</button>
-            <button class="material-symbols-rounded">arrow_upward</button>
+            <button class="material-symbols-rounded" type="button">
+              attach_file
+            </button>
+            <button
+              class="material-symbols-rounded"
+              type="submit"
+              id="send-message"
+            >
+              arrow_upward
+            </button>
           </div>
         </form>
       </div>
