@@ -20,13 +20,14 @@ const handleOutgoingMessage = (event) => {
   event.preventDefault();
   userData.message = messageInput.value.trim();
 
-  const messageContent = `<div class="message-text">${userData.message}</div>`;
+  const messageContent = `<div class="message-text"></div>`;
   // create a new message element with user message content
   const outgoingMessageDiv = createMessageElement(
     messageContent,
     "user-message",
   );
-
+  outgoingMessageDiv.querySelector(".message-text").innerText =
+    userData.message;
   // append outgoing message to chat body element
   chatBody.appendChild(outgoingMessageDiv);
 };
