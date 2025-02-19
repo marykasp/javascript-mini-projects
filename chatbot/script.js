@@ -30,6 +30,9 @@ const handleOutgoingMessage = (event) => {
     userData.message;
   // append outgoing message to chat body element
   chatBody.appendChild(outgoingMessageDiv);
+
+  // clear the message input
+  messageInput.value = "";
 };
 
 // handle Enter key press for sending message
