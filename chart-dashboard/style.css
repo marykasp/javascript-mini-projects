@@ -263,7 +263,8 @@ body {
 }
 
 .bottom-container .prog-status .header,
-.bottom-container .popular .header {
+.bottom-container .popular .header,
+.bottom-container .upcoming .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -271,7 +272,8 @@ body {
 }
 
 .bottom-container .prog-status .header h4,
-.bottom-container .popular .header h4 {
+.bottom-container .popular .header h4,
+.bottom-container .upcoming .header h4 {
   font-weight: 600;
 }
 
@@ -321,11 +323,13 @@ body {
   width: 25%;
 }
 
-.bottom-container .popular .header {
+.bottom-container .popular .header,
+.bottom-container .upcoming .header {
   margin-bottom: 40px;
 }
 
-.bottom-container .popular .header a {
+.bottom-container .popular .header a,
+.bottom-container .upcoming .header a {
   font-size: 12px;
   color: #000;
   font-weight: 600;
@@ -412,4 +416,82 @@ body {
 
 .bottom-container .popular .listen button i {
   font-size: 16px;
+}
+
+.bottom-container .upcoming {
+  width: 25%;
+}
+
+.bottom-container .upcoming .dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.bottom-container .upcoming .dates .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.bottom-container .upcoming .dates .item h5 {
+  font-weight: 600;
+}
+
+.bottom-container .upcoming .dates .item a {
+  color: #000;
+  font-size: 13px;
+  padding: 5px 9px;
+  border-radius: 50%;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-container .upcoming .dates .item.active a,
+.bottom-container .upcoming .dates .item a:hover {
+  color: #fff;
+  background-color: #031224;
+}
+
+.bottom-container .upcoming .events {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bottom-container .upcoming .events .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #eff6ff;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.bottom-container .upcoming .events .item > i {
+  cursor: pointer;
+}
+
+.bottom-container .upcoming .events .item > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bottom-container .upcoming .events .item > div i {
+  font-size: 30px;
+}
+
+.bottom-container .upcoming .events .item .event-info a {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+}
+
+.bottom-container .upcoming .events .item .event-info p {
+  font-size: 13px;
+  color: #9b9b9b;
 }
