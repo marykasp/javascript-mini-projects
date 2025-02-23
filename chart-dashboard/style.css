@@ -262,14 +262,16 @@ body {
   width: 50%;
 }
 
-.bottom-container .prog-status .header {
+.bottom-container .prog-status .header,
+.bottom-container .popular .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.bottom-container .prog-status .header h4 {
+.bottom-container .prog-status .header h4,
+.bottom-container .popular .header h4 {
   font-weight: 600;
 }
 
@@ -317,4 +319,97 @@ body {
 
 .bottom-container .popular {
   width: 25%;
+}
+
+.bottom-container .popular .header {
+  margin-bottom: 40px;
+}
+
+.bottom-container .popular .header a {
+  font-size: 12px;
+  color: #000;
+  font-weight: 600;
+  padding: 4px 8px;
+  background-color: #f3f3f3;
+  border-radius: 20px;
+}
+
+.bottom-container .popular > img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.bottom-container .popular .audio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bottom-container .popular .audio i {
+  font-size: 26px;
+  background-color: #eff6ff;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.bottom-container .popular .audio a {
+  font-size: 15px;
+  color: #000;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.bottom-container .popular > p {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.bottom-container .popular .listen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-container .popular .listen .author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  background-color: #f3f3f3;
+  border-radius: 10px;
+}
+
+.bottom-container .popular .listen .author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.bottom-container .popular .listen .author a {
+  font-size: 14px;
+  color: #000;
+}
+
+.bottom-container .popular .listen .author p {
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+.bottom-container .popular .listen button {
+  border: none;
+  background-color: #031224;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.bottom-container .popular .listen button i {
+  font-size: 16px;
 }
