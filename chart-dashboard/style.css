@@ -292,3 +292,29 @@ body {
 .bottom-container .prog-status .header .tabs a.active {
   background: #fff;
 }
+
+.bottom-container .prog-status .details {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.bottom-container .prog-status .details .item h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.bottom-container .prog-status .details .item p {
+  font-size: 13;
+  color: #9b9b9b;
+}
+
+.bottom-container .prog-status .details .seperator {
+  width: 2px;
+  background-color: #f3f3f3;
+  height: 70px;
+}
+
+.bottom-container .popular {
+  width: 25%;
+}
