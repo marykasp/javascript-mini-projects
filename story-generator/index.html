@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Interactive Story Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Interactive Story Generator</h1>
+      <form action="#">
+        <div class="wrapper">
+          <div>
+            <label for="name">Enter a name:</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Type a name..."
+              required
+            />
+          </div>
+
+          <div>
+            <label for="place">Enter a Place:</label>
+            <input type="text" id="place" placeholder="Enter a place..." />
+          </div>
+
+          <div>
+            <label for="object">Enter an Object:</label>
+            <input
+              type="text"
+              id="object"
+              placeholder="Enter an object..."
+              required
+            />
+          </div>
+
+          <div>
+            <label for="action">Enter an Action: </label>
+            <input type="text" id="action" placeholder="Enter an action..." />
+          </div>
+        </div>
+        <button id="generateStory">Generate Story</button>
+      </form>
+      <div id="story" class="story"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
